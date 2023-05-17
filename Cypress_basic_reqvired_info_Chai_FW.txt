@@ -117,9 +117,6 @@ module.exports = defineConfig({
 --->
 import 'cypress-mochawesome-reporter/register';
 
-18:how to debuge th test cases:
---------------------------------
-cy.Pause()
 
 
 
