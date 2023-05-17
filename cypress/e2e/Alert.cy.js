@@ -39,7 +39,7 @@ describe('About alerts',()=>{
     })
 
 
-    //javascript prompet alert
+    //javascript prompet alert (may be it'll not work properly)
     it('prompet alert ',()=>{
         cy.visit("https://the-internet.herokuapp.com/javascript_alerts")
 

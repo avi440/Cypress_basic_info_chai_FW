@@ -12,7 +12,7 @@ describe('handling Frames',()=>{
                        .should('be.visible')
                        .then(cy.wrap);
                        iframe.clear().type("welcome {ctrl+a}"); 
-                       cy.get("[aria-label='Bold']").click();              
+                       cy.get("[aria-label='Bold']").click();      // this line will use for us to bold the text        
     })
 
     // Approach22
