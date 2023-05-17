@@ -1,0 +1,170 @@
+chai framwork :
+---------------
+1.node js download:
+set the path in local system environment path (C:\Program Files\nodejs)
+
+2.to know node version:
+--------------------
+node --version
+
+3.to know NPM version:
+--------------------
+npm --version
+
+4.download visual studio :
+-------------------------
+
+5.open cmd/terminal then execute below command:
+------------------------------------------------
+npm -i init    ---->create package.json file
+
+6.to install cypress:
+--------------------
+6.1: npm install cypress --save -dev      --> it is uesed to first time install cypress
+6.2: npm install cypress            ---> in there is know cypress in some where 
+
+7.start cypress:
+----------------
+npx cypress open     ---> try this one it will open the cypress tool
+node_modules/.bin/cypress open    ---> try this one 
+
+8.in :
+------
+type1:
+-------
+describe ('suite name', () =>{ 
+it('testl', () => { 
+expect(true).to.equal(true) }) 
+})
+
+type2:
+------
+describe('suite name', function() { 
+it('testl', function(){
+ expect(true).to.equal(true) })  
+ })
+
+9.to run the cypress test file :
+----------------------------------
+npx cypress run
+
+10.to run the cypress test file in head in mode :
+----------------------------------
+npx cypress run --headed
+
+11.to run the cypress test file in head in mode and which file we need to run take that file path :
+---------------------------------------------------------------------------------------------------
+npx cypress run --spec cypress\e2e\FistTest.cy.js --headed
+
+12.to run the cypress test file in specific browser  :
+-----------------------------------------------------
+npx cypress run --browser chrome     --> it will run the all the test casess by cmd
+npx cypress run --browser chrome --spec cypress\e2e\FistTest.cy.js      
+npx cypress run --browser chrome --spec cypress\e2e\FistTest.cy.js --headed
+
+npx cypress run --browser chrome --spec cypress\e2e\captureScreenshortandVideos.cy.js  
+
+13.To add xpath plugen to cypress:
+----------------------------------
+npm install -D cypress-xpath
+
+and add new line on support/commands.js  (or) we need to add runing testcases
+<reference types="cypress-xpath" />
+
+and add new line on support/e2e.js  (or) we need to add runing testcases
+require('cypress-xpath') 
+
+14.iframe plugen add to cypress project:
+----------------------------------------
+npm install -D cypress-iframe          ---> run on terminal it will add new packages
+
+import 'cypress-iframe';   ---> import in class where we use the iframe
+
+15.drag and drop usage:
+------------------------
+npm install --save-dev @4tw/cypress-drag-drop  --> run on terminal it will add new packages
+
+require('@4tw/cypress-drag-drop')  --> add this starting of the class
+
+
+16. file upload in cypress:
+----------------------------
+npm install --save-dev cypress-file-upload    -> run on terminal it will add new packages
+import 'cypress-file-upload';  -->  ---> import in class where we use the upload file
+
+
+17.install cypress-mochawesome-reporter:
+---------------------------------
+17.1: npm i --save-dev cypress-mochawesome-reporter  ---> run on terminal it will add new packages
+
+17.2: Edit config file (cypress.config.js by default)
+
+edit like this :
+---> 
+const { defineConfig } = require('cypress');
+
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+    },
+  },
+});
+
+17.3: Add the below line in this location cypress/support/e2e.js 
+
+--->
+import 'cypress-mochawesome-reporter/register';
+
+18:how to debuge th test cases:
+--------------------------------
+cy.Pause()
+
+
+
+
+
+
+
+
+
+
+structure of cypress:
+--------------------
+testsuite --> Testcase  --> Teststep 
+spec file(cy.js) --> describe block (it block) --> it block (test)
+
+
+fined out the locators:(tage is optional )
+------------------------
+tag id       -->  #id
+tag class          ---> .class
+tag attribute      -->  tag[attribute='value']
+tag class attribute   --> .class[attribute='value']
+
+cypress Assertions:
+---------------------
+1: implicit assertion
+  1:1:should 
+  1:2:and  
+  should('eq','')//eq 
+                 //contain
+				 //be.visible // single perameter
+				 //have.length
+				 //have.value
+				 //include
+				 //exist              // for All assertion opposit is there not.ea
+2:explicit assertion
+   2.1:expect   -- BDD
+   2.2:assert   -- TDD
+
+
+http://automationpractice.pl/index.php
+
+
+
+
+
+
+        
